@@ -1,0 +1,283 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Capybara Game</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: aliceblue; 
+            color: #333; 
+            margin: 0; /* Убираем стандартные отступы браузера */ 
+            padding: 20px; /* Добавляем отступы для всего содержимого */ 
+        } 
+        p { 
+            text-indent: 20px; 
+        } 
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 20px; /* Отступ снизу */ 
+        } 
+ 
+        h4 { 
+            margin-bottom: 30px; /* Отступ снизу для подзаголовка */ 
+        } 
+ 
+        img { 
+            width: 350px; /* Ширина изображения */ 
+            height: auto; /* Автоматическая высота для сохранения пропорций */ 
+            border-radius: 15px; /* Радиус закругления углов */ 
+        } 
+ 
+        .ggg { 
+            text-align: center; 
+            background-color: #ffffff; /* Белый фон для контейнера */ 
+            border-radius: 10px; /* Закругленные углы */ 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */ 
+            padding: 20px; /* Внутренние отступы */ 
+            max-width: 800px; /* Максимальная ширина контейнера */ 
+            margin: 20px auto; /* Центрирование контейнера и отступы сверху/снизу */ 
+        } 
+ 
+        .capybara { 
+            width: 100px; 
+            position: relative; 
+            animation: move 3s infinite alternate; 
+        } 
+ 
+        @keyframes move { 
+            from { 
+                left: 0; 
+            } 
+            to { 
+                left: 300px; 
+            } 
+        } 
+ 
+        .gallery { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; /* Расстояние между изображениями */ 
+            flex-wrap: wrap; 
+            margin-top: 30px; /* Отступ сверху */ 
+        } 
+ 
+        .gallery img { 
+            width: 150px; 
+            border-radius: 10px; 
+        } 
+ 
+        form { 
+            margin-top: 40px; /* Отступ сверху для формы */ 
+        } 
+ 
+        input, textarea { 
+            display: block; 
+            margin: 10px auto; /* Центрирование и отступы между элементами */ 
+            padding: 10px; 
+            width: 80%; 
+            border: 1px solid #ccc; /* Граница для полей ввода */ 
+            border-radius: 5px; /* Закругленные углы */ 
+        } 
+ 
+        button { 
+            padding: 10px 20px; 
+            background-color: #2c3e50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        } 
+ 
+        button:hover { 
+            background-color: #34495e; /* Изменение цвета при наведении */ 
+        } 
+        .button { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #3498db; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            text-align: center; 
+        } 
+ 
+        .button:hover { 
+            background-color: #2980b9; 
+        } 
+        .m { 
+    color:#000000; 
+    border-radius: 15px; /* Сглаженные углы */ 
+    padding: 20px; 
+    text-align: center; /* Центрирование текста */ 
+    opacity: 0; 
+    transform: translateY(-50px); 
+    animation: appear 2s forwards; 
+    margin-bottom: 20px; /* Отступ снизу */ 
+     
+} 
+.w { 
+    color:rgb(255, 255, 255); 
+    border-radius: 15px; /* Сглаженные углы */ 
+    padding: 20px; 
+    text-align: center; /* Центрирование текста */ 
+    opacity: 0; 
+    transform: translateY(-50px); 
+    animation: appear 2s forwards; 
+    margin-bottom: 20px; /* Отступ снизу */
+} 
+@keyframes appear { 
+            0% { 
+                opacity: 0; 
+                transform: translateY(-50px); 
+            } 
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        } 
+ 
+label {
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+    </style> 
+</head> 
+<body>
+    <h1 class="m">Capybara Games</h1>
+    <h4 class="m">Capybara Games - это специальный сайт с играми про капибар для сайта Capybara.NET</h4> 
+    <div class="cap"> 
+        <img src="https://www.mos.ru/upload/newsfeed/articles/3f8e364f681dfdaae9efe687378f28a9/3.jpg"> 
+    </div> 
+    <a href="page.html" class="button" class="m">Перейти на страницу</a> 
+    <div class="ggg"> 
+        <h2 class="">Игра, где капибара будет бегать и следить за вами (●'◡'●)</h2> 
+        <img class="capybara" src="https://i.ytimg.com/vi/PI_oRNZ8Dkk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAVpjPcY5xfwBwVtpQl720LAnY9jg" alt="Капибара"> 
+    </div> 
+    <h1 class="m">Галерея капибар</h1> 
+    <div class="gallery"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRVCJNVAYp1i8GEhbq9oDZW0CCXaUdoTXdww&s" alt="Капибара 1"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgpdR5xJadZKDV79kb-VJIzeJb3C67T1uMMw&s" alt="Капибара 2"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Ca3-mOIiobAEHWtghvc_9kUlUhg-OjL9WA&s" alt="Капибара 3"> 
+        <p></p>
+        <img src="https://sun9-12.userapi.com/impg/1_QIY70ngq9KMLxG3QKAnPjbnnTjyilF7hlv7A/c-89nMioZl8.jpg?size=900x600&quality=96&sign=b7b3f9007814508affb285f497a4f281&c_uniq_tag=bkmttTOXDtWvUdS4I5m_oG6ULZyS39KbpXYO3PVaGbM&type=album">
+        <img src="https://avatars.dzeninfra.ru/get-zen_brief/5410458/pub_6332805118d1ca24885632b4_63328116fa954f3cffa00e7a/scale_1200">
+        <img src="https://i.pinimg.com/736x/dc/cb/e5/dccbe52c0209b6f29425d5bb88c05b8a.jpg">
+        <p></p>
+        <img src="https://avatars.dzeninfra.ru/get-zen_doc/9722138/pub_643ff38a7d0ee052d4fd0031_643ff46c3f138e082f591714/scale_1200">
+    </div> 
+    <h1 class="m">Напишите капибаре!</h1> 
+<form onsubmit="return false;"> 
+    <input type="text" placeholder="Ваше имя" id="textname"> 
+    <textarea placeholder="Ваше сообщение" id="textNorm"></textarea> 
+    <button type="button" id="sendButton">Отправить</button> 
+    <p class="m" id="result"></p> 
+</form> 
+ 
+<h1 class="m">Capybara Clicker</h1> 
+<p class="m">Капибар: <span id="count">0</span></p> 
+<img src="https://sun9-68.userapi.com/s/v1/ig2/zSGp_VF9NtcVGeGWZ-F1F0rk7XFjjtiAJ6ZFfxuXycoRo7dlhj4fn97Dnjbm_PzdxrEosmlECbL-dZEtqp6cls1H.jpg?quality=96&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x479,540x539,640x639,720x719,735x734&from=bu&u=M7Q5-ph3jm95k7Cccfs85bYO57AGCqQnAhl1DhICvjk&cs=735x734" alt="Capybara" onclick="addCapybara()"> 
+<button onclick="p()">прокачать</button> 
+
+<h1 class="m">Create Capybara</h1>
+<div class="form-container">
+    <h1 class="m">Форма ввода</h1>
+    <form action="/submit" method="post">
+        <label for="name">Имя Капибары: </label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="number">Сколько ей лет: </label>
+        <input type="number" id="number" name="number" required>
+
+        <label for="text">Чем она занимается: </label>
+        <input type="text" id="text" name="text" required>
+
+        <input type="submit" value="Отправить" id="butt">
+        <p id="re" class="m"></p>
+    </form>
+</div>
+ 
+<script> 
+    document.getElementById("sendButton").addEventListener("click", function() { 
+        s(); 
+    }); 
+    document.getElementById("butt").addEventListener("click", function(event) { 
+        event.preventDefault();
+        f(); 
+    });
+ 
+    let count = 0; 
+    let c = 1; 
+    let m = 10; 
+    function addCapybara() { 
+        count = count + c; 
+        document.getElementById('count').textContent = count; 
+    } 
+ 
+    function s() { 
+        const inputValue = document.getElementById("textname").value; 
+        const inputText = document.getElementById("textNorm").value; 
+        document.getElementById("result").textContent = inputValue + ": " + inputText; 
+    } 
+    
+    function f() {
+        const name = document.getElementById("name").value;
+        const numb = document.getElementById("number").value;
+        const text = document.getElementById("text").value;
+        document.getElementById("re").textContent = "Вашу капибару зовут " + name + ", ей " + numb + " лет, она занимается " + text;
+    }
+    function p() { 
+        if (count == m) { 
+            count = count - m; 
+            c = c + c; 
+            m = m + m; 
+             
+            alert("успешно!"); 
+        } 
+        else if (count > m) { 
+            count = count - m; 
+            c = c + c; 
+            m = m + m; 
+            alert("успешно!"); 
+        } 
+        else { 
+            alert("Вам не хватает монет"); 
+        } 
+    } 
+</script> 
+ 
+</body> 
+</html>
